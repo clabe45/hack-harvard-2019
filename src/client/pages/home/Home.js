@@ -9,27 +9,104 @@ export default class Home extends React.Component {
     this.state = {
       searchResults: [
         {
-          name: "Linus Torvald",
-          skills: ["linux", "git"],
-          interests: ["foss"],
-          picture: logo
+          id: 1,
+          name: "Steven",
+          picture: logo,
+          wanted: true,
+          // projectWanted: true,
+          description: "A short india shorta delta echo that likes to eat bread.",
+          skills: ["css", "html"],
+          interests: ["food", "apple"],
+          projects: "An app that creates an interface for users."
         },
         {
-          name: "Nicholas",
-          skills: ["backend", "api"],
-          interests: ["web", "music"],
-          picture: logo
+          id: 2,
+          name: "Josh",
+          picture: logo,
+          wanted: true,
+          // projectWanted: true,
+          description: "A short india shorta delta echo that likes to eat bread.",
+          skills: ["css", "html"],
+          interests: ["food", "apple"],
+          projects: "An app that creates an interface for users."
+        },
+        {
+          id: 3,
+          name: "Bob",
+          picture: logo,
+          wanted: true,
+          // projectWanted: true,
+          description: "A short india shorta delta echo that likes to eat bread.",
+          skills: ["css", "html"],
+          interests: ["food", "apple"],
+          projects: "An app that creates an interface for users."
+        },
+        {
+          id: 4,
+          name: "Clerk",
+          picture: logo,
+          wanted: true,
+          // projectWanted: false,
+          description: "A short india shorta delta echo that likes to eat bread.",
+          skills: ["css", "html"],
+          interests: ["food", "apple"],
+          projects: "An app that creates an interface for users."
         }
       ]
     };
   }
+
+  //Toggle unwanted
+
+  markPerson(id, wanted) {
+    this.setState({
+      searchResults: this.state.searchResults.map(person => {
+        person = Object.assign({}, person);
+        if (person.id === id) {
+          person.wanted = wanted;
+          console.log(person);
+        }
+        return person;
+      })
+    });
+  }
+
+  // markUnwantedProject(id) {
+  //   this.setState({persons: this.state.persons.map(person => {
+  //     if (person.id === id) {
+  //       person.wanted = !person.wanted
+  //     }
+  //
+  //     return person
+  //   })});
+  // }
+  //
+  //
+  // markUnwantedPerson(id) {
+  //   this.setState({persons: this.state.persons.map(person => {
+  //     if (person.id === id) {
+  //       person.wanted = !person.wanted
+  //     }
+  //
+  //     return person
+  //   })});
+  // }
+  //
+  // delPerson(id) {
+  //   this.setState({persons: [...this.state.persons.filter(person => person.id !== id)]});
+  // }
+  //
+  // delProject(id) {
+  //   this.setState({persons: [...this.state.persons.filter(person => person.id !== id)]});
+  // }
 
   render() {
     return (
       <div className="home">
         {this.state.searchResults.map((user, i) => (
           <SearchResult key={i}
-            name={user.name} skills={user.skills} interests={user.interests} picture={user.picture} />
+            name={user.name} person={user}
+            markPerson={this.markPerson.bind(this)} />
         ))}
       </div>
     );
