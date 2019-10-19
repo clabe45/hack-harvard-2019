@@ -6,7 +6,7 @@ import Skill from '../../../components/Skill'
 import Interest from '../../../components/Interest'
 
 export default class SearchResult extends React.Component {
-  getStyle = () => {
+  getStyle() {
 		return {
 			textDecoration: this.props.person.wanted ?
 				'none' : 'line-through'
