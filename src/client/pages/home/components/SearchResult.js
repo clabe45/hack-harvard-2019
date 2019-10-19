@@ -27,8 +27,8 @@ export default class SearchResult extends React.Component {
         <Grid.Column width='14'>
           <p style={{fontSize: 22, marginBottom: -18}}>{this.props.person.name}</p><br/>
           <span>
-            {this.props.person.skills.map((skill, i) => <Skill id={i} name={skill} />)}<br/>
-            {this.props.person.interests.map((interest, i) => <Interest id={i} name={interest} />)}
+            {this.props.person.skills.map((skill, i) => <Skill key={i} name={skill} />)}<br/>
+            {this.props.person.interests.map((interest, i) => <Interest key={i} name={interest} />)}
           </span>
         </Grid.Column>
       </Grid>
