@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase-admin": "^8.6.1",
+    "firebase-functions": "^3.3.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"
