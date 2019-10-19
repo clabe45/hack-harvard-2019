@@ -14,10 +14,11 @@ export default class Home extends React.Component {
           picture: logo,
           wanted: true,
           // projectWanted: true,
-          description: 'A short india shorta delta echo that likes to eat bread.',
+          bio: 'A short india shorta delta echo that likes to eat bread.',
           skills: ['css', 'html'],
           interests: ['food', 'apple'],
-          projects: 'An app that creates an interface for users.'
+          projects: 'An app that creates an interface for users.',
+          url: '#'
         },
         {
           id: 2,
@@ -25,10 +26,11 @@ export default class Home extends React.Component {
           picture: logo,
           wanted: true,
           // projectWanted: true,
-          description: 'A short india shorta delta echo that likes to eat bread.',
+          bio: 'A short india shorta delta echo that likes to eat bread.',
           skills: ['css', 'html'],
           interests: ['food', 'apple'],
-          projects: 'An app that creates an interface for users.'
+          projects: 'An app that creates an interface for users.',
+          url: '#'
         },
         {
           id: 3,
@@ -36,10 +38,11 @@ export default class Home extends React.Component {
           picture: logo,
           wanted: true,
           // projectWanted: true,
-          description: 'A short india shorta delta echo that likes to eat bread.',
+          bio: 'A short india shorta delta echo that likes to eat bread.',
           skills: ['css', 'html'],
           interests: ['food', 'apple'],
-          projects: 'An app that creates an interface for users.'
+          projects: 'An app that creates an interface for users.',
+          url: '#'
         },
         {
           id: 4,
@@ -47,10 +50,11 @@ export default class Home extends React.Component {
           picture: logo,
           wanted: true,
           // projectWanted: false,
-          description: 'A short india shorta delta echo that likes to eat bread.',
+          bio: 'A short india shorta delta echo that likes to eat bread.',
           skills: ['css', 'html'],
           interests: ['food', 'apple'],
-          projects: 'An app that creates an interface for users.'
+          projects: 'An app that creates an interface for users.',
+          url: '#'
         }
       ]
     };
