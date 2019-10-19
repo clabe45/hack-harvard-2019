@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Persons from './components/Persons';
-import Header from './components/Header';
+import Persons from './client/components/Persons';
+import Header from './client/components/Header';
 import uuid from 'uuid';
-import Messages from './components/pages/Messages';
-import Projects from './components/pages/Projects';
+import Messages from './client/pages/Messages';
+import Projects from './client/pages/Projects';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -16,9 +16,11 @@ class App extends Component {
       id: 1,
       name: "Steven",
       wanted: false,
+      projectWanted: true,
       description: "A short india shorta delta echo that likes to eat bread.",
       skills: ["css", "html"],
-      interests: ["food", "apple"]
+      interests: ["food", "apple"],
+      projects: "An app that creates an interface for users."
 
     },
 
@@ -26,11 +28,11 @@ class App extends Component {
       id: 2,
       name: "Josh",
       wanted: true,
+      projectWanted: true,
       description: "A short india shorta delta echo that likes to eat bread.",
       skills: ["css", "html"],
-      interests: ["food", "apple"]
-
-
+      interests: ["food", "apple"],
+      projects: "An app that creates an interface for users."
 
     },
 
@@ -38,9 +40,12 @@ class App extends Component {
       id: 3,
       name: "Bob",
       wanted: false,
+      projectWanted: true,
       description: "A short india shorta delta echo that likes to eat bread.",
       skills: ["css", "html"],
-      interests: ["food", "apple"]
+      interests: ["food", "apple"],
+      projects: "An app that creates an interface for users."
+
 
 
 
@@ -49,9 +54,12 @@ class App extends Component {
     {id: 4,
       name: "Clerk",
       wanted: false,
+      projectWanted: false,
       description: "A short india shorta delta echo that likes to eat bread.",
       skills: ["css", "html"],
-      interests: ["food", "apple"]
+      interests: ["food", "apple"],
+      projects: "An app that creates an interface for users."
+
 
     }
 
@@ -60,9 +68,19 @@ class App extends Component {
 
   //Toggle unwanted
 
+  markUnwantedProject = (id) => {
+    this.setState({persons: this.state.persons.map(person => {
+      if (person.id === id) {
+        person.wanted = !person.wanted
+      }
+
+      return person
+    })});
+
+  }
 
 
-  markUnwanted = (id) => {
+  markUnwantedPerson = (id) => {
 
     this.setState({persons: this.state.persons.map(person => {
       if (person.id === id) {
@@ -80,6 +98,12 @@ class App extends Component {
 
   }
 
+  delProject = (id) => {
+
+    this.setState({persons: [...this.state.persons.filter(person => person.id !== id)]});
+
+  }
+
   render() {
     
     return (
@@ -89,14 +113,15 @@ class App extends Component {
     <Route exact path="/" render={props => (
 
       <React.Fragment>
-      <Persons persons={this.state.persons} markUnwanted={this.markUnwanted} delPerson={this.delPerson}/>
+      <Persons persons={this.state.persons} markUnwantedPerson={this.markUnwantedPerson} delPerson={this.delPerson}/>
 
       </React.Fragment>
 
       )} />
 
+      
+
       <Route path="/messages" component={Messages} />
-      <Route path="/projects" component={Projects} />
     </div>  
 
     </Router>

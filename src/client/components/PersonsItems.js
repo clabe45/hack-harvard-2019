@@ -24,7 +24,7 @@ export class PersonsItems extends Component {
 			<div style={this.getStyle()}>
 
 			<p>
-			<input type="checkbox" onChange={this.props.markUnwanted.bind
+			<input type="checkbox" onChange={this.props.markUnwantedPerson.bind
 				(this, id)}/> 
 			{' '}
 
