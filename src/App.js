@@ -10,20 +10,17 @@ import Messages from './client/pages/Messages';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
-
-
   render() {
-
     return (
-      <Router>
-        <div className="App">
-        <Header />
-        <Route exact path="/" component={Home}/>
-        <Route path="/messages" component={Messages} />
-      </div>
-    </Router>
-  );
-}
+        <Router>
+          <div className="App">
+          <Header />
+          <Route exact path="/" component={Home}/>
+          <Route path="/messages" component={Messages} />
+        </div>
+      </Router>
+    );
+  }
 }
 
-export default Home;
+export default App;
