@@ -25,11 +25,11 @@ export default class SearchResult extends React.Component {
           <Image circular size='small' alt='' src={this.props.person.picture} style={{height: '100%'}} />
         </Grid.Column>
         <Grid.Column width='14'>
-          <h3>{this.props.person.name}</h3>
-          <p>
+          <p style={{fontSize: 22, marginBottom: -18}}>{this.props.person.name}</p><br/>
+          <span>
             {this.props.person.skills.map((skill, i) => <Skill id={i} name={skill} />)}<br/>
             {this.props.person.interests.map((interest, i) => <Interest id={i} name={interest} />)}
-          </p>
+          </span>
         </Grid.Column>
       </Grid>
     );
