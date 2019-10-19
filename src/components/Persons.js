@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import PersonsItems from './PersonsItems'
+import PropTypes from 'prop-types';
 
-class DevNet extends Component {
+
+
+
+class Persons extends Component {
+ 
   render() {
   	return this.props.persons.map((person) => (
-  		<PersonsItems person={person}/>
+  		<PersonsItems key={person.id} person={person} markUnwanted={this.props.markUnwanted}/>
   		));
 }
+
 }
 
-export default DevNet;
+
+
+Persons.propTypes = {
+
+	persons: PropTypes.array.isRequired
+
+}
+
+
+export default Persons;
