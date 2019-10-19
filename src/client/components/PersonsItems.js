@@ -16,7 +16,7 @@ export class PersonsItems extends Component {
 
 	render() {
 
-		const { id, name } = this.props.person;
+		const { id, name, description} = this.props.person;
 
 
 
@@ -30,7 +30,15 @@ export class PersonsItems extends Component {
 
 			{ name }
 
+			
+
+
 			</p>
+			<p>{ description }</p>
+
+			<button onClick={this.props.delPerson.bind
+				(this, id)}>Remove</button>
+
 				
 			</div>
 		)

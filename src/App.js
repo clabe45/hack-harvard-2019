@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Persons from './components/Persons'
+import Persons from './components/Persons';
+import Header from './components/Header';
+import uuid from 'uuid';
+import Messages from './components/pages/Messages';
+import Projects from './components/pages/Projects';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -9,13 +15,21 @@ class App extends Component {
     {
       id: 1,
       name: "Steven",
-      wanted: false
+      wanted: false,
+      description: "A short india shorta delta echo that likes to eat bread.",
+      skills: ["css", "html"],
+      interests: ["food", "apple"]
+
     },
 
     {
       id: 2,
       name: "Josh",
-      wanted: true
+      wanted: true,
+      description: "A short india shorta delta echo that likes to eat bread.",
+      skills: ["css", "html"],
+      interests: ["food", "apple"]
+
 
 
     },
@@ -23,20 +37,30 @@ class App extends Component {
     {
       id: 3,
       name: "Bob",
-      wanted: false
+      wanted: false,
+      description: "A short india shorta delta echo that likes to eat bread.",
+      skills: ["css", "html"],
+      interests: ["food", "apple"]
+
 
 
     },
 
     {id: 4,
       name: "Clerk",
-      wanted: false
+      wanted: false,
+      description: "A short india shorta delta echo that likes to eat bread.",
+      skills: ["css", "html"],
+      interests: ["food", "apple"]
+
     }
 
     ]
   }
 
   //Toggle unwanted
+
+
 
   markUnwanted = (id) => {
 
@@ -50,12 +74,32 @@ class App extends Component {
 
   }
 
+  delPerson = (id) => {
+
+    this.setState({persons: [...this.state.persons.filter(person => person.id !== id)]});
+
+  }
+
   render() {
     
     return (
-    <div className="App">
-      <Persons persons={this.state.persons} markUnwanted={this.markUnwanted}/>
+      <Router>
+    <div className="App"> 
+    <Header />
+    <Route exact path="/" render={props => (
+
+      <React.Fragment>
+      <Persons persons={this.state.persons} markUnwanted={this.markUnwanted} delPerson={this.delPerson}/>
+
+      </React.Fragment>
+
+      )} />
+
+      <Route path="/messages" component={Messages} />
+      <Route path="/projects" component={Projects} />
     </div>  
+
+    </Router>
   );
 }
 }

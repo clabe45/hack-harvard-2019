@@ -9,7 +9,7 @@ class Persons extends Component {
  
   render() {
   	return this.props.persons.map((person) => (
-  		<PersonsItems key={person.id} person={person} markUnwanted={this.props.markUnwanted}/>
+  		<PersonsItems key={person.id} person={person} markUnwanted={this.props.markUnwanted} delPerson={this.props.delPerson}/>
   		));
 }
 
