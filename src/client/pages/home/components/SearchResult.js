@@ -18,8 +18,8 @@ export default class SearchResult extends React.Component {
       <Grid style={this.getStyle()}>
         <Grid.Row>
           <Grid.Column width="1">
-            <Button color="green" onClick={() => this.props.markPerson(this.props.person.id, true)}></Button>
-            <Button color="red" onClick={() => this.props.markPerson(this.props.person.id, false)}></Button>
+            <Button color="green" onClick={() => this.props.unwantPerson(this.props.person.id, true)}></Button>
+            <Button color="red" onClick={() => this.props.unwantPerson(this.props.person.id, false)}></Button>
           </Grid.Column>
           <Grid.Column width="1">
             <Image size="small" alt="" src={this.props.person.picture} />

@@ -58,17 +58,22 @@ export default class Home extends React.Component {
 
   //Toggle unwanted
 
-  markPerson(id, wanted) {
+  unwantPerson(id) {
     this.setState({
       searchResults: this.state.searchResults.map(person => {
         person = Object.assign({}, person);
         if (person.id === id) {
-          person.wanted = wanted;
-          console.log(person);
+          person.wanted = false;
         }
         return person;
       })
     });
+    setTimeout(() => {
+      // Remove person
+      this.setState({
+        searchResults: this.state.searchResults.filter(person => person.id !== id)
+      })
+    }, 600);
   }
 
   // markUnwantedProject(id) {
@@ -106,7 +111,7 @@ export default class Home extends React.Component {
         {this.state.searchResults.map((user, i) => (
           <SearchResult key={i}
             name={user.name} person={user}
-            markPerson={this.markPerson.bind(this)} />
+            unwantPerson={this.unwantPerson.bind(this)} />
         ))}
       </div>
     );
