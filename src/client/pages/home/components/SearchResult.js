@@ -22,7 +22,7 @@ export default class SearchResult extends React.Component {
           <Button circular color="red" style={{height: '50%', opacity: 0.5}} onClick={() => this.props.unwantPerson(this.props.person.id, false)}></Button>
         </Grid.Column>
         <Grid.Column width="1">
-          <Image size="small" alt="" src={this.props.person.picture} />
+          <Image circular size="small" alt="" src={this.props.person.picture} />
         </Grid.Column>
         <Grid.Column width="14">
           <h3>{this.props.person.name}</h3>
