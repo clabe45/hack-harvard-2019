@@ -12,14 +12,15 @@ export default class SearchResult extends React.Component {
 				'none' : 'line-through'
 		}
 	}
+  // this.props.person.wanted ? "rgba(0,255,0)" : "rgba(255,0,0,0.2)"
 
   render() {
     return (
       <Grid style={this.getStyle()}>
-        <Grid.Row>
+        <Grid.Row style={{style:0.2}}>
           <Grid.Column width="1">
-            <Button color="green" onClick={() => this.props.unwantPerson(this.props.person.id, true)}></Button>
-            <Button color="red" onClick={() => this.props.unwantPerson(this.props.person.id, false)}></Button>
+            <Button circular style={{height: '50%', backgroundColor: 'rgba(0,255,0,0.5)'}} onClick={() => this.props.unwantPerson(this.props.person.id, true)}></Button>
+            <Button circular style={{height: '50%', backgroundColor: 'rgba(255,0,0,0.5)'}} onClick={() => this.props.unwantPerson(this.props.person.id, false)}></Button>
           </Grid.Column>
           <Grid.Column width="1">
             <Image size="small" alt="" src={this.props.person.picture} />
