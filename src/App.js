@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import Home from './client/pages/home/Home';
 import './App.css';
 
 function App() {
@@ -23,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
