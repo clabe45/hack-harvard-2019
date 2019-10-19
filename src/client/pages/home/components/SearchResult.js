@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Button } from 'semantic-ui-react'
+import { Grid, Image, Button, Icon } from 'semantic-ui-react'
 import PropTypes from 'prop-types';
 
 import Skill from '../../../components/Skill'
@@ -33,7 +33,7 @@ export default class SearchResult extends React.Component {
       padding: 0,
       width: 24,
       height: 24,
-      opacity: 0.65,
+      opacity: 0.82,
       display: 'block'
     };
 
@@ -42,8 +42,8 @@ export default class SearchResult extends React.Component {
         <Grid style={this.getStyle()}>
           <Grid.Column width='1' align style={{textAlign: 'center', }}>
             <div style={{margin: 0, top: '50%', left: '50%', transform: 'translate(50%,50%)'}}>
-              <Button color='green' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.person.id, true)}></Button>
-              <Button color='red' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.person.id, false)}></Button>
+              <Button circular color='green' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.person.id, true)}><Icon name='check'></Icon></Button>
+              <Button circular color='red' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.person.id, false)}><Icon name='close'></Icon></Button>
             </div>
           </Grid.Column>
           <Grid.Column width='1'>
