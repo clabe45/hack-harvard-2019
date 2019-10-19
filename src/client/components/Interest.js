@@ -5,7 +5,7 @@ export default class Interest extends React.Component {
   render() {
     return (
       <a>
-        <Label className="blue">{this.props.name}</Label>
+        <Label className='blue'>{this.props.name}</Label>
       </a>
     );
   }

@@ -10,47 +10,47 @@ export default class Home extends React.Component {
       searchResults: [
         {
           id: 1,
-          name: "Steven",
+          name: 'Steven',
           picture: logo,
           wanted: true,
           // projectWanted: true,
-          description: "A short india shorta delta echo that likes to eat bread.",
-          skills: ["css", "html"],
-          interests: ["food", "apple"],
-          projects: "An app that creates an interface for users."
+          description: 'A short india shorta delta echo that likes to eat bread.',
+          skills: ['css', 'html'],
+          interests: ['food', 'apple'],
+          projects: 'An app that creates an interface for users.'
         },
         {
           id: 2,
-          name: "Josh",
+          name: 'Josh',
           picture: logo,
           wanted: true,
           // projectWanted: true,
-          description: "A short india shorta delta echo that likes to eat bread.",
-          skills: ["css", "html"],
-          interests: ["food", "apple"],
-          projects: "An app that creates an interface for users."
+          description: 'A short india shorta delta echo that likes to eat bread.',
+          skills: ['css', 'html'],
+          interests: ['food', 'apple'],
+          projects: 'An app that creates an interface for users.'
         },
         {
           id: 3,
-          name: "Bob",
+          name: 'Bob',
           picture: logo,
           wanted: true,
           // projectWanted: true,
-          description: "A short india shorta delta echo that likes to eat bread.",
-          skills: ["css", "html"],
-          interests: ["food", "apple"],
-          projects: "An app that creates an interface for users."
+          description: 'A short india shorta delta echo that likes to eat bread.',
+          skills: ['css', 'html'],
+          interests: ['food', 'apple'],
+          projects: 'An app that creates an interface for users.'
         },
         {
           id: 4,
-          name: "Clerk",
+          name: 'Clerk',
           picture: logo,
           wanted: true,
           // projectWanted: false,
-          description: "A short india shorta delta echo that likes to eat bread.",
-          skills: ["css", "html"],
-          interests: ["food", "apple"],
-          projects: "An app that creates an interface for users."
+          description: 'A short india shorta delta echo that likes to eat bread.',
+          skills: ['css', 'html'],
+          interests: ['food', 'apple'],
+          projects: 'An app that creates an interface for users.'
         }
       ]
     };
@@ -107,7 +107,7 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div className="home">
+      <div className='home'>
         {this.state.searchResults.map((user, i) => (
           <SearchResult key={i}
             name={user.name} person={user}

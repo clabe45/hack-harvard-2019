@@ -6,9 +6,9 @@ function Header() {
 
 		<header>
 		<h1>DevNet </h1>
-		<Link to="/">Home</Link>
-		<Link to="/messages">Messages</Link>
-		<Link to="/projects">Projects</Link>
+		<Link to='/'>Home</Link>
+		<Link to='/messages'>Messages</Link>
+		<Link to='/projects'>Projects</Link>
 
 		</header>
 

@@ -12,19 +12,19 @@ export default class SearchResult extends React.Component {
 			textDecoration: this.props.person.wanted ? 'none' : 'line-through'
 		}
 	}
-  // this.props.person.wanted ? "rgba(0,255,0)" : "rgba(255,0,0,0.2)"
+  // this.props.person.wanted ? 'rgba(0,255,0)' : 'rgba(255,0,0,0.2)'
 
   render() {
     return (
       <Grid style={this.getStyle()}>
-        <Grid.Column width="1">
-          <Button circular color="green" style={{height: '50%', opacity: 0.5}} onClick={() => this.props.unwantPerson(this.props.person.id, true)}></Button>
-          <Button circular color="red" style={{height: '50%', opacity: 0.5}} onClick={() => this.props.unwantPerson(this.props.person.id, false)}></Button>
+        <Grid.Column width='1'>
+          <Button circular color='green' style={{height: '50%', opacity: 0.5}} onClick={() => this.props.unwantPerson(this.props.person.id, true)}></Button>
+          <Button circular color='red' style={{height: '50%', opacity: 0.5}} onClick={() => this.props.unwantPerson(this.props.person.id, false)}></Button>
         </Grid.Column>
-        <Grid.Column width="1">
-          <Image circular size="small" alt="" src={this.props.person.picture} style={{height: '100%'}} />
+        <Grid.Column width='1'>
+          <Image circular size='small' alt='' src={this.props.person.picture} style={{height: '100%'}} />
         </Grid.Column>
-        <Grid.Column width="14">
+        <Grid.Column width='14'>
           <h3>{this.props.person.name}</h3>
           <p>
             {this.props.person.skills.map((skill, i) => <Skill id={i} name={skill} />)}<br/>
