@@ -4,7 +4,8 @@ import { Label } from 'semantic-ui-react';
 export default class Skill extends React.Component {
   getStyle() {
     return {
-      fontSize: '10px'
+      marginRight: this.props.margin,
+      marginBottom: '5px'
     }
   }
 

@@ -18,7 +18,8 @@ export default class Home extends React.Component {
           skills: ['css', 'html'],
           interests: ['food', 'apple'],
           projects: 'An app that creates an interface for users.',
-          url: '#'
+          majors: ['computer science'],
+          url: '/user'
         },
         {
           id: 2,
@@ -30,7 +31,8 @@ export default class Home extends React.Component {
           skills: ['css', 'html'],
           interests: ['food', 'apple'],
           projects: 'An app that creates an interface for users.',
-          url: '#'
+          majors: ['computer science'],
+          url: '/user'
         },
         {
           id: 3,
@@ -42,7 +44,8 @@ export default class Home extends React.Component {
           skills: ['css', 'html'],
           interests: ['food', 'apple'],
           projects: 'An app that creates an interface for users.',
-          url: '#'
+          majors: ['computer science', 'mathematics'],
+          url: '/user'
         },
         {
           id: 4,
@@ -54,7 +57,8 @@ export default class Home extends React.Component {
           skills: ['css', 'html'],
           interests: ['food', 'apple'],
           projects: 'An app that creates an interface for users.',
-          url: '#'
+          majors: ['computer science'],
+          url: '/user'
         }
       ]
     };
@@ -114,7 +118,7 @@ export default class Home extends React.Component {
       <div className='home'>
         {this.state.searchResults.map((user, i) => (
           <SearchResult key={i}
-            name={user.name} person={user}
+            name={user.name} user={user}
             unwantPerson={this.unwantPerson.bind(this)} />
         ))}
       </div>
