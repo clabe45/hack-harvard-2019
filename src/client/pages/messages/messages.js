@@ -6,8 +6,11 @@ class message extends React.Component {
         this.body = body;
     }
     postMessage() {
-        // create a new XMLHttpRequest
+        //TODO create a new XMLHttpRequest
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '../../../api/chat')
+    }
+    getMessage() {
+        
     }
 }
