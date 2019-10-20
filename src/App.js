@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Segment, Image, Grid, Menu } from 'semantic-ui-react';
 
@@ -10,9 +10,10 @@ import Home from './client/pages/home/Home';
 import Users from './client/pages/users/Users';
 import User from './client/pages/user/User';
 import Projects from './client/pages/projects/Projects';
+import Messages from './client/pages/messages/Messages';
 import favicon from './client/assets/favicon.png';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <Router className="App" style={{ height: '100%' }}>
@@ -30,7 +31,7 @@ class App extends Component {
           }}>
           <Menu vertical borderless text fixed="left" style={{ fontSize: 20, padding: 20, left: 10, top: 74 }}>
             <Menu.Item as={Link} to='/' style={{ padding: 15, margin: 0 }}><div style={{ color: '#6435c9'}}>Home</div></Menu.Item>
-            <Menu.Item as={Link} to='/' style={{ padding: 15, margin: 0 }}><div style={{ color: 'white'}}>Messages</div></Menu.Item>
+            <Menu.Item as={Link} to='/messages' style={{ padding: 15, margin: 0 }}><div style={{ color: 'white'}}>Messages</div></Menu.Item>
             <Menu.Item as={Link} to="/users" style={{ padding: 15, margin: 0 }}><div style={{ color: 'white'}}>Find users</div></Menu.Item>
             <Menu.Item as={Link} to='/Projects' style={{ padding: 15, margin: 0 }}><div style={{ color: 'white'}}>Find projects</div></Menu.Item>
           </Menu>
@@ -39,6 +40,7 @@ class App extends Component {
             width: '53%', height: '100%', margin: 'auto', marginTop: 150, padding: 0, overflowY: 'scroll'
           }}>
           <Route exact path="/" component={Home}/>
+          <Route path="/messages" component={Messages}/>
           <Route path="/users" component={Users} />
           <Route path="/user" component={User} />
           <Route path="/projects" component={Projects} />

@@ -36,7 +36,6 @@ export default class SearchResult extends React.Component {
       padding: 0,
       width: '100%',
       height: '50%',
-      opacity: 0.7,
       display: 'block',
       borderRadius: 0
     };
@@ -44,7 +43,7 @@ export default class SearchResult extends React.Component {
     return (
       <Grid style={this.getStyle()} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
         <Grid.Column width='1' align style={{ padding: 0, height: '100%' }}>
-          <Button color='green' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.user.id, true)}><Icon name='check'></Icon></Button>
+          <Button color='green' style={btnStyle} onClick={() => {}}><Icon name='check'></Icon></Button>
           <Button color='red' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.user.id, false)}><Icon name='close'></Icon></Button>
         </Grid.Column>
 

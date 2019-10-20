@@ -18,7 +18,7 @@ app.get('/:room', (req, res) =>{
     res.render('room', {roomName: req.params.room})
 });
 
-server.listen(3000)
+server.listen(5000)
 
 //give each user thier own socket
 io.on('connection', socket => {
