@@ -3,7 +3,7 @@ import React from 'react'
 export default class LabelArray extends React.Component {
   render() {
     return (
-      <div>
+      <div style={{ display: 'inline' }}>
         [ {this.props.labels
           .map((major, i) => [React.createElement(this.props.component, {
             key: i,

@@ -4,15 +4,15 @@ import { Label } from 'semantic-ui-react';
 export default class Major extends React.Component {
   getStyle() {
     return {
-      backgroundColor: '#32CD32',
       marginRight: this.props.margin,
+      padding: '5px 7px 5px 7px',
       marginBottom: '5px'
     }
   }
 
   render() {
     return (
-      <Label style={this.getStyle()}>
+      <Label color="yellow" style={this.getStyle()}>
         <strong>{this.props.name}</strong>
       </Label>
     );
