@@ -59,6 +59,58 @@ export default class Home extends React.Component {
           projects: 'An app that creates an interface for users.',
           majors: ['computer science'],
           url: '/user'
+        },
+        {
+          id: 1,
+          name: 'Steven',
+          picture: logo,
+          wanted: true,
+          // projectWanted: true,
+          bio: 'A short india shorta delta echo that likes to eat bread.',
+          skills: ['css', 'html'],
+          interests: ['food', 'apple'],
+          projects: 'An app that creates an interface for users.',
+          majors: ['computer science'],
+          url: '/user'
+        },
+        {
+          id: 2,
+          name: 'Josh',
+          picture: logo,
+          wanted: true,
+          // projectWanted: true,
+          bio: 'A short india shorta delta echo that likes to eat bread.',
+          skills: ['css', 'html'],
+          interests: ['food', 'apple'],
+          projects: 'An app that creates an interface for users.',
+          majors: ['computer science'],
+          url: '/user'
+        },
+        {
+          id: 3,
+          name: 'Bob',
+          picture: logo,
+          wanted: true,
+          // projectWanted: true,
+          bio: 'A short india shorta delta echo that likes to eat bread.',
+          skills: ['css', 'html'],
+          interests: ['food', 'apple'],
+          projects: 'An app that creates an interface for users.',
+          majors: ['computer science', 'mathematics'],
+          url: '/user'
+        },
+        {
+          id: 4,
+          name: 'Clerk',
+          picture: logo,
+          wanted: true,
+          // projectWanted: false,
+          bio: 'A short india shorta delta echo that likes to eat bread.',
+          skills: ['css', 'html'],
+          interests: ['food', 'apple'],
+          projects: 'An app that creates an interface for users.',
+          majors: ['computer science'],
+          url: '/user'
         }
       ]
     };

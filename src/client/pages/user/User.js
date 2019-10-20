@@ -32,9 +32,10 @@ export default class User  extends React.Component {
   render() {
     return (
       <div style={{
-        fontSize: 22, textAlign: 'center', color: '#666', backgroundColor: '#eee',
-        marginLeft: '30%', marginRight: '30%', marginTop: '20px', paddingBottom: '35px'
+        fontSize: 22, textAlign: 'center', color: '#eee', backgroundColor: '#333',
+        marginLeft: '20%', marginRight: '20%', marginTop: '3%', paddingBottom: '35px'
         }}>
+
         <Image src={this.state.user.picture} style={{margin: 'auto'}} size="large"/>
         <h1 style={{fontSize: 44}}>{this.state.user.name}</h1>
         <p style={{fontSize: 15}}>

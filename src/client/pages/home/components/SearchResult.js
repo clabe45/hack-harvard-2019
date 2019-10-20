@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Image, Button, Icon } from 'semantic-ui-react'
-import PropTypes from 'prop-types';
 
 import Major from '../../../components/label/Major'
 import Skill from '../../../components/label/Skill'
@@ -21,10 +20,12 @@ export default class SearchResult extends React.Component {
 
   getStyle() {
 		return {
+      alignItems: 'center',
       // opacity: 0.2,
-      border: '1px solid #ddd',
-      margin: 5,
-      backgroundColor: this.state.hover ? '#fbfbfb' : 'white',
+      border: '1px solid #888',
+      margin: 14,
+      height: '110px',
+      // backgroundColor: this.state.hover ? '#ffffff08' : 'transparent',
 			textDecoration: this.props.user.wanted ? 'none' : 'line-through'
 		}
 	}
@@ -33,36 +34,39 @@ export default class SearchResult extends React.Component {
   render() {
     const btnStyle = {
       padding: 0,
-      width: 24,
-      height: 24,
-      opacity: 0.82,
-      display: 'block'
+      width: '100%',
+      height: '50%',
+      opacity: 0.7,
+      display: 'block',
+      borderRadius: 0
     };
 
     return (
-      <a href={this.props.user.url} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
-        <Grid style={this.getStyle()}>
-          <Grid.Column width='1' align style={{textAlign: 'center', }}>
-            <div style={{margin: 0, top: '50%', left: '50%', transform: 'translate(50%,50%)'}}>
-              <Button circular color='green' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.user.id, true)}><Icon name='check'></Icon></Button>
-              <Button circular color='red' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.user.id, false)}><Icon name='close'></Icon></Button>
-            </div>
-          </Grid.Column>
-          <Grid.Column width='1'>
-            <Image circular size='small' alt='' src={this.props.user.picture} style={{height: '100%'}} />
-          </Grid.Column>
-          <Grid.Column width='14'>
-            <span style={{fontSize: 22}}>{this.props.user.name}</span><span style={{marginRight: 10}}>&nbsp;</span>
-            <span style={{color: 'grey'}}>{this.props.user.bio}</span>
-            <br/>
-            <span style={{fontSize: 10}}>
-              <LabelArray component={Major} labels={this.props.user.majors}/>
-              <LabelArray component={Skill} labels={this.props.user.skills}/>
-              <LabelArray component={Interest} labels={this.props.user.interests}/>
-            </span>
-          </Grid.Column>
-        </Grid>
-      </a>
+      <Grid style={this.getStyle()} onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
+        <Grid.Column width='1' align style={{ padding: 0, height: '100%' }}>
+          <Button color='green' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.user.id, true)}><Icon name='check'></Icon></Button>
+          <Button color='red' style={btnStyle} onClick={() => this.props.unwantPerson(this.props.user.id, false)}><Icon name='close'></Icon></Button>
+        </Grid.Column>
+
+        <Grid.Column offset='1' width='2' style={{ padding: '3px 10px 3px 10px' }}>
+          <a href={this.props.user.url}>
+            <Image circular size='tiny' alt='' src={this.props.user.picture} />
+          </a>
+        </Grid.Column>
+
+        <Grid.Column width='8' style={{ lineHeight: 1.5, padding: '3px 10px 3px 10px' }}>
+          <a href={this.props.user.url} style={{fontSize: 22}}>
+            {this.props.user.name}
+          </a><span style={{marginRight: 10}}>&nbsp;</span>
+          <span style={{color: '#bfbfbf'}}>{this.props.user.bio}</span>
+        </Grid.Column>
+
+        <Grid.Column width='5' textAlign="right" style={{fontSize: 10, padding: '3px 10px 3px 10px'}}>
+          <LabelArray component={Major} labels={this.props.user.majors}/>
+          <LabelArray component={Skill} labels={this.props.user.skills}/>
+          <LabelArray component={Interest} labels={this.props.user.interests}/>
+        </Grid.Column>
+      </Grid>
     );
   }
 }
