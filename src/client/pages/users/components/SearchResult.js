@@ -62,8 +62,8 @@ export default class SearchResult extends React.Component {
         </Grid.Column>
 
         <Grid.Column width='5' textAlign="right" style={{fontSize: 10, padding: '3px 10px 3px 10px'}}>
-          <LabelArray component={Major} labels={this.props.user.majors}/>
-          <LabelArray component={Skill} labels={this.props.user.skills}/>
+          <LabelArray component={Major} labels={this.props.user.majors}/><br/>
+          <LabelArray component={Skill} labels={this.props.user.skills}/><br/>
           <LabelArray component={Interest} labels={this.props.user.interests}/>
         </Grid.Column>
       </Grid>
