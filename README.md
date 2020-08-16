@@ -1,6 +1,6 @@
 ## DevNet
 
-*This is a clone of the original private repo.*
+*This is a clone of the original repo.*
 
 When you clone the repository. Do the following steps. 
 ```
